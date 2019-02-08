@@ -17,27 +17,38 @@ listaDeTelefones = [
     '+558688272410' ##Zé Maria 9
 ]
 now = datetime.now()
-horaAtual = now.strftime('%H:%M')
-indiceLoop = 0
+dataAtual = now.strftime('%d/%m/%Y')
+indiceLoop = 1
 tempoDecorrido = 0
-executando = True
-while executando == True:
-        ##inicia o Loop até que se complete o total de tempo determinado
-        while horaAtual >= '10:40' and horaAtual < '12:00':
-            # for x in range(len(listaDeTelefones)): 
-            #     EnviarMensagem.enviarMensagem('whatsapp:+14155238886',
-            #     'whatsapp:{}'.format(listaDeTelefones[x]),
-            #     'Teste de Tempo')
+
+
+
+for x in range(len(listaDeTelefones)): 
+    Mensagem.enviarMensagem('whatsapp:+14155238886',
+    'whatsapp:{}'.format(listaDeTelefones[x]),
+    'Senhores, Iniciando Contagem do Robo de envios pelo Whatsapp, Para não atrapalhar, silencie este chat')
+    print('-=' * 30)
+
+while dataAtual != '10/02/2019':
+
+    now = datetime.now()
+    horaAtual = now.strftime('%H:%M')
+    dataAtual = now.strftime('%d/%m/%Y')
+
+    ##inicia o Loop até que se complete o total de tempo determinado
+    if horaAtual >= '08:00' and horaAtual < '22:00':
+        for x in range(len(listaDeTelefones)): 
             Mensagem.enviarMensagem('whatsapp:+14155238886',
-                'whatsapp:{}'.format(listaDeTelefones[0]),
-                'Tempo decorrido entre cada mensagem: {} Minutos'.format(tempoDecorrido))
-            tempoDecorrido += 10
-            sleep(600)
-            # indiceLoop += 1
+            'whatsapp:{}'.format(listaDeTelefones[x]),
+            'Mensagem: {} - Tempo decorrido entre cada mensagem: {} Minutos'.format(indiceLoop, tempoDecorrido))
             
-            ##Parar o Loop
-            if int(now.hour) == 10 and int(now.minute) == 59:
-                executando = False
+        # Mensagem.enviarMensagem('whatsapp:+14155238886',
+        #     'whatsapp:{}'.format(listaDeTelefones[0]),
+        #     'Mensagem: {} - Tempo decorrido entre cada mensagem: {} Minutos'.format(indiceLoop, tempoDecorrido))
+        tempoDecorrido += 10
+        sleep(600)
+        indiceLoop += 1
+        print('-=' * 30)
 
             
 
@@ -45,7 +56,7 @@ while executando == True:
 # from datetime import datetime
 # now = datetime.now()
 # horaAtual = now.strftime('%H:%M')
-# if horaAtual == '10:36':
+# if horaAtual >= '10:36':
 #         print('funcionou')
 # else:
 #     print('Não funcionou')
