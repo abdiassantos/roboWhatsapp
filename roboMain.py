@@ -17,12 +17,13 @@ listaDeTelefones = [
     '+558688272410' ##Zé Maria 9
 ]
 now = datetime.now()
+horaAtual = now.strftime('%H:%M')
 indiceLoop = 0
 tempoDecorrido = 0
 executando = True
 while executando == True:
         ##inicia o Loop até que se complete o total de tempo determinado
-        while (int(now.hour) >= 10 and int(now.hour) < 11) and (int(now.minute) >= 30 and int(now.minute) < 59):
+        while horaAtual >= '10:40' and horaAtual < '12:00':
             # for x in range(len(listaDeTelefones)): 
             #     EnviarMensagem.enviarMensagem('whatsapp:+14155238886',
             #     'whatsapp:{}'.format(listaDeTelefones[x]),
@@ -40,12 +41,14 @@ while executando == True:
 
             
 
-#%%
+# #%%
 # from datetime import datetime
 # now = datetime.now()
-# if int(now.hour) == 9 and int(now.minute) == 5:
-#     while int(now.hour) != 9 and int(now.minute) != 14:
+# horaAtual = now.strftime('%H:%M')
+# if horaAtual == '10:36':
 #         print('funcionou')
+# else:
+#     print('Não funcionou')
 
 # from twilio.rest import Client
 
