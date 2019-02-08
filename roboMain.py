@@ -22,7 +22,7 @@ tempoDecorrido = 0
 executando = True
 while executando == True:
         ##inicia o Loop até que se complete o total de tempo determinado
-        while int(now.hour) >= 9 and int(now.hour) < 10 and int(now.minute) >= 0 and int(now.minute) < 59:
+        while (int(now.hour) >= 10 and int(now.hour) < 11) and (int(now.minute) >= 30 and int(now.minute) < 59):
             # for x in range(len(listaDeTelefones)): 
             #     EnviarMensagem.enviarMensagem('whatsapp:+14155238886',
             #     'whatsapp:{}'.format(listaDeTelefones[x]),
@@ -35,7 +35,7 @@ while executando == True:
             # indiceLoop += 1
             
             ##Parar o Loop
-            if int(now.hour) == 9 and int(now.minute) == 59:
+            if int(now.hour) == 10 and int(now.minute) == 59:
                 executando = False
 
             
